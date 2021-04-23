@@ -11,7 +11,7 @@ public class Contatos {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    private Integer id;
 
     @Column(nullable = false)
     private String nome;
@@ -25,7 +25,7 @@ public class Contatos {
     @Column(nullable = false)
     private String email;
 
-    public long getId(){
+    public Integer getId(){
         return id;
     }
 
@@ -45,7 +45,7 @@ public class Contatos {
         return email;
     }
 
-    public void setId(long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

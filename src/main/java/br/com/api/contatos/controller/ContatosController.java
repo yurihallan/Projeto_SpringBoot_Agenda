@@ -33,7 +33,7 @@ public class ContatosController {
     }
     // metodo GET - listando um contato especifico
     @RequestMapping(value = "/contatos/{id}", method = RequestMethod.GET)
-    public ResponseEntity<Contatos> Get(@PathVariable(value = "id") long id){
+    public ResponseEntity<Contatos> Get(@PathVariable(value = "id") Integer id){
         Optional<Contatos> contato = _ContatosRepository.findById(id);
         if(contato.isPresent()){
             return new ResponseEntity<Contatos>(contato.get(),HttpStatus.OK);
@@ -50,7 +50,7 @@ public class ContatosController {
     }
     //metodo put - alterando um contato especifico
     @RequestMapping(value = "/contatos/{id}", method = RequestMethod.PUT)
-    public ResponseEntity<Contatos> Put(@PathVariable(value = "id") long id, @RequestBody Contatos NewContato){
+    public ResponseEntity<Contatos> Put(@PathVariable(value = "id") Integer id, @RequestBody Contatos NewContato){
         Optional<Contatos> oldContato = _ContatosRepository.findById(id);
         if(oldContato.isPresent()){
             Contatos contato = oldContato.get();
@@ -66,7 +66,7 @@ public class ContatosController {
     }
     //metodo delete - deleta um contato especifico
     @RequestMapping(value = "/contatos/{id}", method = RequestMethod.DELETE)
-    public ResponseEntity<Object> Delete(@PathVariable(value = "id") long id){
+    public ResponseEntity<Object> Delete(@PathVariable(value = "id") Integer id){
         Optional<Contatos> contato = _ContatosRepository.findById(id);
         if(contato.isPresent()){
             _ContatosRepository.delete((contato.get()));

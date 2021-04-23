@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import br.com.api.contatos.entity.Contatos;
 
 @Repository
-public interface ContatosRepository  extends JpaRepository<Contatos, Long>{
+public interface ContatosRepository  extends JpaRepository<Contatos, Integer>{
 
     
 }
